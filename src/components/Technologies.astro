@@ -1,0 +1,111 @@
+---
+import AndroidIcon from "../Icons/AndroidIcon.astro";
+import BlazorIcon from "../Icons/BlazorIcon.astro";
+import BootstrapIcon from "../Icons/BootstrapIcon.astro";
+import CSSIcon from "../Icons/CSSIcon.astro";
+import CSharpIcon from "../Icons/CSharpIcon.astro";
+import GitHubIcon from "../Icons/GitHubIcon.astro";
+import HTMLIcon from "../Icons/HTMLIcon.astro";
+import JavaScriptIcon from "../Icons/JavaScriptIcon.astro";
+import KotlinIcon from "../Icons/KotlinIcon.astro";
+import MaterialIcon from "../Icons/MaterialIcon.astro";
+import ReactIcon from "../Icons/ReactIcon.astro";
+import SQLServerIcon from "../Icons/SQLServerIcon.astro";
+import TypeScriptIcon from "../Icons/TypeScriptIcon.astro";
+
+enum TechnologyType {
+  Frontend = 1,
+  Backend = 2,
+  Database = 3,
+  Other = 4
+}
+const TECHNOLOGIES = [
+  {
+    name: 'React',
+    icon: ReactIcon,
+    colorClasses: 'bg-blue-950 dark:bg-blue-300/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'JavaScript',
+    icon: JavaScriptIcon,
+    colorClasses: 'bg-yellow-500 dark:bg-yellow-300/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'HTML',
+    icon: HTMLIcon,
+    colorClasses: 'bg-orange-600 dark:bg-orange-500/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'CSS',
+    icon: CSSIcon,
+    colorClasses: 'bg-blue-500 dark:bg-blue-300/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'Kotlin',
+    icon: KotlinIcon,
+    colorClasses: 'bg-purple-500 dark:bg-purple-300/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'CSharp',
+    icon: CSharpIcon,
+    colorClasses: 'bg-purple-600 dark:bg-purple-500/40',
+    type: TechnologyType.Backend
+  },
+  {
+    name: 'Blazor',
+    icon: BlazorIcon,
+    colorClasses: 'bg-indigo-600 dark:bg-indigo-500/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'Bootstrap',
+    icon: BootstrapIcon,
+    colorClasses: 'bg-purple-500 dark:bg-purple-500/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'Jetpack Compose',
+    icon: AndroidIcon,
+    colorClasses: 'bg-green-500 dark:bg-green-500/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'TypeScript',
+    icon: TypeScriptIcon,
+    colorClasses: 'bg-sky-500 dark:bg-sky-500/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'GitHub',
+    icon: GitHubIcon,
+    colorClasses: 'bg-gray-700 dark:bg-gray-500/40',
+    type: TechnologyType.Other
+  },
+  {
+    name: 'SQL Server',
+    icon: SQLServerIcon,
+    colorClasses: 'bg-red-500 dark:bg-red-500/40',
+    type: TechnologyType.Database
+  },
+  {
+    name: 'Material UI',
+    icon: MaterialIcon,
+    colorClasses: 'bg-sky-400 dark:bg-blue-500/40',
+    type: TechnologyType.Frontend
+  }
+
+];
+---
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  {TECHNOLOGIES.map((technology) => (
+    <div class={`flex flex-col items-center justify-center p-4 transition-all duration-300 ${technology.colorClasses} hover:scale-110 rounded-lg shadow-md`}>
+      <technology.icon className="size-12" />
+      <span class="mt-2 text-sm font-semibold text-white">{technology.name}</span>
+    </div>
+  ))}
+</div>

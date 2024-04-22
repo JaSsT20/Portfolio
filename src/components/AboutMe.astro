@@ -1,0 +1,48 @@
+---
+const personalImageAlt = "Levid Tejada";
+import astroConfig from "../../astro.config.mjs";
+
+const BASE = astroConfig.base;
+---
+
+<article
+  class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+>
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-200 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+  >
+    <p>
+      My name is Jasson Levid Tejada Martínez, but my friends call me
+      Levid. I began programming independently, creating simple apps with
+      Windows Forms and scripting for MultiTheftAuto using Lua. Currently, I am <strong
+        >finishing my degree in Systems and Computing Engineering</strong
+      >.
+    </p>
+
+    <p>
+      Some of my notable experiences include <strong
+        >participating in the ICPC in 2022 with the team 'No-Name' and 2023 with
+        'C-Bao'</strong
+      >. Although we didn't qualify for the subsequent rounds, it was a
+      enriching experience that helped me learn a lot.
+    </p>
+
+    <p>
+      At this stage of my life, I have leaned more towards web development,
+      experimenting with different technologies in an environment where I felt
+      comfortable, such as Blazor, as it uses C# and Razor, languages I was
+      already familiar with. However, I have also decided to step out of that
+      comfort zone and learn new technologies like JavaScript, TypeScript,
+      React, Astro, etc.
+    </p>
+  </div>
+
+  <img
+    width="200"
+    height="200"
+    src=`${BASE}/me.webp`
+    alt={personalImageAlt}
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+    style="object-position: 50% 50%"
+  />
+</article>

@@ -1,0 +1,34 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "Android Development",
+    date: "2023 - Present...",
+    description:
+      "I started my journey in Android development in 2023, focusing on Kotlin. Since then, I have developed a few applications, including my app PuppyPlace. I have also worked with Jetpack Compose, which is a modern toolkit for building native Android UI.",
+  },
+  {
+    title: "Web Development",
+    date: "2022 - Present...",
+    description:
+      "I embarked on my journey in the web development field in 2022, initially focusing on Blazor. Since then, I have expanded my knowledge and skills by working with newer technologies such as React and Astro, using both JavaScript and TypeScript.",
+  },
+  {
+    title: ".Net Expierence",
+    date: "2020 - Present...",
+    description:
+      "I have been working in the .NET environment since 2020, utilizing C# as my primary language, which is one of my strongest skills. With C#, I have developed web applications using Blazor and APIs.",
+  },
+];
+---
+
+<ol class="relative border-s border-black dark:border-white ml-3">
+  {
+    EXPERIENCE.map((experience) => (
+      <li>
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>

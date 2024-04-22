@@ -1,0 +1,162 @@
+---
+import Link from "../Icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+
+import HTMLIcon from "../Icons/HTMLIcon.astro";
+import CSSIcon from "../Icons/CSSIcon.astro";
+import CSharpIcon from "../Icons/CSharpIcon.astro";
+import KotlinIcon from "../Icons/KotlinIcon.astro";
+import AndroidIcon from "../Icons/AndroidIcon.astro";
+import BlazorIcon from "../Icons/BlazorIcon.astro";
+import BootstrapIcon from "../Icons/BootstrapIcon.astro";
+import MaterialIcon from "../Icons/MaterialIcon.astro";
+import JavaScriptIcon from "../Icons/JavaScriptIcon.astro";
+import ReactIcon from "../Icons/ReactIcon.astro";
+import GitHubIcon from "../Icons/GitHubIcon.astro";
+
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-red-500/80 text-white",
+    icon: HTMLIcon,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-blue-500/80 text-white",
+    icon: CSSIcon,
+  },
+  CSharp: {
+    name: "C#",
+    class: "bg-purple-500/40 text-white",
+    icon: CSharpIcon,
+  },
+  KOTLIN: {
+    name: "Kotlin",
+    class: "bg-yellow-500/80 text-white",
+    icon: KotlinIcon,
+  },
+  JETPACK_COMPOSE: {
+    name: "Jetpack Compose",
+    class: "bg-green-500/60 text-white",
+    icon: AndroidIcon,
+  },
+  BLAZOR: {
+    name: "Blazor",
+    class: "bg-indigo-500/80 text-white",
+    icon: BlazorIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-indigo-600/80 text-white",
+    icon: BootstrapIcon,
+  },
+  MATERIAL_UI: {
+    name: "Material UI",
+    class: "bg-blue-700/50 text-white",
+    icon: MaterialIcon,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-yellow-500/80 text-white",
+    icon: JavaScriptIcon,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-blue-500/80 text-white",
+    icon: ReactIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Puppy Place",
+    description:
+      "A mobile application for Android devices that enables dog shelters to post dogs available for adoption and allows users to view and schedule appointments to meet the dogs.",
+    image: [
+      `/Portfolio/projects/puppy_place/PuppyPlaceAll.webp`,
+      `/Portfolio/projects/puppy_place/Presentacion_Home.webp`,
+    ],
+    link: "https://github.com/Greypolanco",
+    github: "https://github.com/JaSsT20/PuppyPlace",
+    tags: [TAGS.KOTLIN, TAGS.JETPACK_COMPOSE, TAGS.MATERIAL_UI],
+  },
+  {
+    title: "Sales System",
+    description:
+      "A web app created with Blazor that allows users to manage sales, products, and customers.",
+    image: [
+      `/Portfolio/projects/sales_system/SalesSystem.webp`,
+      `/Portfolio/projects/sales_system/SalesRegister.webp`,
+    ],
+    link: "",
+    github: "https://github.com/JaSsT20/SalesSyste_AP1_Levid",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.CSharp, TAGS.BLAZOR, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "TaskRoom",
+    description:
+      "A web app created with JavaScript and React, that allows users to manage tasks and projects.",
+    image: [`/Portfolio/projects/taskroom/TaskRoom.webp`],
+    link: "https://github.com/Greypolanco",
+    github: "https://github.com/Greypolanco/GDP-WebProject",
+    tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.BOOTSTRAP],
+  },
+];
+---
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2 lg:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt={title}
+              class="object-cover object-top w-full h-full md:h-56 lg:h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image[0]}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-yellow-500">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHubIcon class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Co-Author
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
