@@ -6,13 +6,14 @@ import MailIcon from "../Icons/MailIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
 import GitHubIcon from "../Icons/GitHubIcon.astro";
 import DownloadIcon from "../Icons/DownloadIcon.astro";
+import astroConfig from "../../astro.config.mjs"
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-32"
-      src={`/Portfolio/me.webp`}
+      src={`${astroConfig.base}/me.webp`}
       alt={personalImageAlt}
     />
 
@@ -53,7 +54,7 @@ import DownloadIcon from "../Icons/DownloadIcon.astro";
       jassontejada@gmail.com
     </SocialPill>
 
-    <SocialPill href=`/Portfolio/CV.pdf` download="Levid_Tejada_CV.pdf">
+    <SocialPill href=`${astroConfig.base}/CV.pdf` download="Levid_Tejada_CV.pdf">
       <DownloadIcon class="size-4 md:size-6" />
       CV
     </SocialPill>

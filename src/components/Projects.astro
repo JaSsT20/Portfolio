@@ -13,6 +13,7 @@ import MaterialIcon from "../Icons/MaterialIcon.astro";
 import JavaScriptIcon from "../Icons/JavaScriptIcon.astro";
 import ReactIcon from "../Icons/ReactIcon.astro";
 import GitHubIcon from "../Icons/GitHubIcon.astro";
+import astroConfig from "../../astro.config.mjs";
 
 
 const TAGS = {
@@ -74,8 +75,8 @@ const PROJECTS = [
     description:
       "A mobile application for Android devices that enables dog shelters to post dogs available for adoption and allows users to view and schedule appointments to meet the dogs.",
     image: [
-      `/Portfolio/projects/puppy_place/PuppyPlaceAll.webp`,
-      `/Portfolio/projects/puppy_place/Presentacion_Home.webp`,
+      `${astroConfig.base}/projects/puppy_place/PuppyPlaceAll.webp`,
+      `${astroConfig.base}/projects/puppy_place/Presentacion_Home.webp`,
     ],
     link: "https://github.com/Greypolanco",
     github: "https://github.com/JaSsT20/PuppyPlace",
@@ -86,8 +87,8 @@ const PROJECTS = [
     description:
       "A web app created with Blazor that allows users to manage sales, products, and customers.",
     image: [
-      `/Portfolio/projects/sales_system/SalesSystem.webp`,
-      `/Portfolio/projects/sales_system/SalesRegister.webp`,
+      `${astroConfig.base}/projects/sales_system/SalesSystem.webp`,
+      `${astroConfig.base}/projects/sales_system/SalesRegister.webp`,
     ],
     link: "",
     github: "https://github.com/JaSsT20/SalesSyste_AP1_Levid",
@@ -97,7 +98,7 @@ const PROJECTS = [
     title: "TaskRoom",
     description:
       "A web app created with JavaScript and React, that allows users to manage tasks and projects.",
-    image: [`/Portfolio/projects/taskroom/TaskRoom.webp`],
+    image: [`${astroConfig.base}/projects/taskroom/TaskRoom.webp`],
     link: "https://github.com/Greypolanco",
     github: "https://github.com/Greypolanco/GDP-WebProject",
     tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.BOOTSTRAP],
