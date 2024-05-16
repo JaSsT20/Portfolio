@@ -1,5 +1,6 @@
 ---
 import AndroidIcon from "../Icons/AndroidIcon.astro";
+import AstroIcon from "../Icons/AstroIcon.astro";
 import BlazorIcon from "../Icons/BlazorIcon.astro";
 import BootstrapIcon from "../Icons/BootstrapIcon.astro";
 import CSSIcon from "../Icons/CSSIcon.astro";
@@ -11,6 +12,7 @@ import KotlinIcon from "../Icons/KotlinIcon.astro";
 import MaterialIcon from "../Icons/MaterialIcon.astro";
 import ReactIcon from "../Icons/ReactIcon.astro";
 import SQLServerIcon from "../Icons/SQLServerIcon.astro";
+import Tailwind from "../Icons/Tailwind.astro";
 import TypeScriptIcon from "../Icons/TypeScriptIcon.astro";
 
 enum TechnologyType {
@@ -97,8 +99,19 @@ const TECHNOLOGIES = [
     icon: MaterialIcon,
     colorClasses: 'bg-sky-400 dark:bg-blue-500/40',
     type: TechnologyType.Frontend
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: Tailwind,
+    colorClasses: 'bg-blue-500 dark:bg-blue-300/40',
+    type: TechnologyType.Frontend
+  },
+  {
+    name: 'Astro',
+    icon: AstroIcon,
+    colorClasses: 'bg-gray-800 dark:bg-gray-600/40',
+    type: TechnologyType.Frontend
   }
-
 ];
 ---
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
