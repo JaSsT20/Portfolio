@@ -1,7 +1,6 @@
 ---
 import Link from "../Icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
-
 import HTMLIcon from "../Icons/HTMLIcon.astro";
 import CSSIcon from "../Icons/CSSIcon.astro";
 import CSharpIcon from "../Icons/CSharpIcon.astro";
@@ -14,7 +13,9 @@ import JavaScriptIcon from "../Icons/JavaScriptIcon.astro";
 import ReactIcon from "../Icons/ReactIcon.astro";
 import GitHubIcon from "../Icons/GitHubIcon.astro";
 import astroConfig from "../../astro.config.mjs";
-
+import AstroIcon from "../Icons/AstroIcon.astro";
+import TailwindIcon from "../Icons/Tailwind.astro";
+import UsersIcon from "../Icons/UsersIcon.astro";
 
 const TAGS = {
   HTML: {
@@ -27,7 +28,7 @@ const TAGS = {
     class: "bg-blue-500/80 text-white",
     icon: CSSIcon,
   },
-  CSharp: {
+  CSHARP: {
     name: "C#",
     class: "bg-purple-500/40 text-white",
     icon: CSharpIcon,
@@ -67,6 +68,16 @@ const TAGS = {
     class: "bg-blue-500/80 text-white",
     icon: ReactIcon,
   },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-black/80 text-white",
+    icon: AstroIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-blue-500/80 text-white",
+    icon: TailwindIcon,
+  },
 };
 
 const PROJECTS = [
@@ -78,7 +89,7 @@ const PROJECTS = [
       `${astroConfig.base}/projects/puppy_place/PuppyPlaceAll.webp`,
       `${astroConfig.base}/projects/puppy_place/Presentacion_Home.webp`,
     ],
-    link: "https://github.com/Greypolanco",
+    co_author: "https://github.com/Greypolanco",
     github: "https://github.com/JaSsT20/PuppyPlace",
     tags: [TAGS.KOTLIN, TAGS.JETPACK_COMPOSE, TAGS.MATERIAL_UI],
   },
@@ -90,74 +101,97 @@ const PROJECTS = [
       `${astroConfig.base}/projects/sales_system/SalesSystem.webp`,
       `${astroConfig.base}/projects/sales_system/SalesRegister.webp`,
     ],
-    link: "",
     github: "https://github.com/JaSsT20/SalesSyste_AP1_Levid",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.CSharp, TAGS.BLAZOR, TAGS.BOOTSTRAP],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.CSHARP, TAGS.BLAZOR, TAGS.BOOTSTRAP],
   },
   {
     title: "TaskRoom",
     description:
       "A web app created with JavaScript and React, that allows users to manage tasks and projects.",
     image: [`${astroConfig.base}/projects/taskroom/TaskRoom.webp`],
-    link: "https://github.com/Greypolanco",
+    co_author: "https://github.com/Greypolanco",
     github: "https://github.com/Greypolanco/GDP-WebProject",
     tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.BOOTSTRAP],
   },
+  {
+    title: "Avatar: The Last Airbender API",
+    description:
+      "A OpenSource web app that allows users to view information about the characters of the series Avatar: The Last Airbender. This one still in development.",
+    image: [`${astroConfig.base}/projects/avatar_api/indexTlab.webp`],
+    link: "/avatar-api",
+    github: "https://github.com/JaSsT20/AvatarTLAB.UI",
+
+    tags: [
+      TAGS.HTML,
+      TAGS.CSS,
+      TAGS.JAVASCRIPT,
+      TAGS.CSHARP,
+      TAGS.ASTRO,
+      TAGS.TAILWIND,
+    ],
+  },
 ];
 ---
+
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2 lg:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt={title}
-              class="object-cover object-top w-full h-full md:h-56 lg:h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image[0]}
-            />
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 lg:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-yellow-500">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
+    PROJECTS.map(
+      ({ image, title, description, tags, link, github, co_author }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2 lg:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-full md:h-56 lg:h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image[0]}
+              />
             </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHubIcon class="size-6" />
-                  Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Co-Author
-                </LinkButton>
-              )}
-            </footer>
           </div>
-        </div>
-      </article>
-    ))
+
+          <div class="w-full md:w-1/2 lg:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-yellow-500">{title}</h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-2 text-gray-700 dark:text-gray-400">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {co_author && (
+                  <LinkButton href={co_author}>
+                    <UsersIcon class="size-6" />
+                    Co-Author
+                  </LinkButton>
+                )}
+                {github && (
+                  <LinkButton href={github}>
+                    <GitHubIcon class="size-6" />
+                    Code
+                  </LinkButton>
+                )}
+                {link && (
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    View
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
+          </div>
+        </article>
+      )
+    )
   }
 </div>
