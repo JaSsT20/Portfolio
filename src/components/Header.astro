@@ -20,24 +20,22 @@ const navItems = [
 ]
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <img src="/favicon.webp" alt="Favicon" class="size-6" />
-  <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
-  >
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mt-2">
+  <nav class="flex items-center px-3 py-1 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 bg-white/50 dark:bg-gray-800/90 backdrop-blur shadow-lg ring-1 ring-white/10">
+    <a href="#" class="p-1 mr-3 transition-transform hover:scale-110">
+      <img src="/favicon.webp" alt="Inicio" class="w-6 h-6" />
+    </a>
+    
+    {navItems.map((link) => (
+      <a
+        class="relative block px-3 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+        aria-label={link.label}
+        href={link.url}
+      >
+        {link.title}
+      </a>
+    ))}
+    
     <ThemeToggle />
   </nav>
 </header>
