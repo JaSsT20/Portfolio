@@ -35,37 +35,45 @@ import astroConfig from "../../astro.config.mjs";
   <p
     class="text-pretty mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    I'm a enthusiastic senior student of system engineering and computer science from 
-    <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-red-500 dark:bg-gradient-to-r dark:from-blue-600 dark:from-5% dark:via-white dark:to-red-400">
-      Dominican Republic
-    </span>.
-    Always looking for new challenges and opportunities to learn and grow.
-    My main skills are working with <span class="text-purple-500 font-semibold">.NET</span> technologies on the
-    <span class="text-yellow-500 dark:text-yellow-200 font-semibold">Back-end</span>, but I'm always looking to learn new things.
-    Actually working on my web <span class="text-yellow-500 dark:text-yellow-200 font-semibold">Front-end</span> skills.
-  </p>
-  <nav class="flex flex-wrap gap-4 mt-5">
-    <SocialPill href="https://www.linkedin.com/in/sirlevid">
-      <LinkedInIcon class="size-4 md:size-6" />
-      LinkedIn
-    </SocialPill>
-
-    <SocialPill href="https://github.com/JaSsT20">
-      <GitHubIcon class="size-4 md:size-6" />
-      GitHub
-    </SocialPill>
-
-    <SocialPill href="mailto:jassontejada@gmail.com">
-      <MailIcon class="size-4 md:size-6" />
-      jassontejada@gmail.com
-    </SocialPill>
-
-    <SocialPill
-      href=`${astroConfig.base}/CV.pdf`
-      download="Levid_Tejada_CV.pdf"
+    I'm an enthusiastic systems and computer science engineer from
+    <span
+      class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-red-500 dark:bg-gradient-to-r dark:from-blue-600 dark:from-5% dark:via-white dark:to-red-400"
     >
-      <DownloadIcon class="size-4 md:size-6" />
-      CV
-    </SocialPill>
-  </nav>
+      Dominican Republic
+    </span>. Always seeking new challenges and opportunities to learn and grow.
+    My main skills involve working with <span
+      class="text-purple-500 font-semibold">.NET</span
+    > technologies on the
+    <span class="text-yellow-500 dark:text-yellow-200 font-semibold"
+      >Back-end</span
+    >, but I'm always eager to explore and master new tools and technologies.
+    Currently, I'm focusing on improving my <span
+      class="text-yellow-500 dark:text-yellow-200 font-semibold">Front-end</span
+    > skills.
+
+    <nav class="flex flex-wrap gap-4 mt-5">
+      <SocialPill href="https://www.linkedin.com/in/sirlevid">
+        <LinkedInIcon class="size-4 md:size-6" />
+        LinkedIn
+      </SocialPill>
+
+      <SocialPill href="https://github.com/JaSsT20">
+        <GitHubIcon class="size-4 md:size-6" />
+        GitHub
+      </SocialPill>
+
+      <SocialPill href="mailto:tejadalevid@outlook.com">
+        <MailIcon class="size-4 md:size-6" />
+        tejadalevid@outlook.com
+      </SocialPill>
+
+      <SocialPill
+        href=`${astroConfig.base}/CV.pdf`
+        download="Levid_Tejada_CV.pdf"
+      >
+        <DownloadIcon class="size-4 md:size-6" />
+        CV
+      </SocialPill>
+    </nav>
+  </p>
 </div>
