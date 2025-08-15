@@ -152,21 +152,21 @@ const PROJECTS = [
               </div>
               <footer class="flex items-end justify-start mt-4 gap-x-4">
                 {co_author && (
-                  <LinkButton href={co_author}>
+                  <LinkButton href={co_author} target="_blank">
                     <UsersIcon class="size-6" />
                     Co-Author
                   </LinkButton>
                 )}
                 {github && (
-                  <LinkButton href={github}>
+                  <LinkButton href={github} target="_blank">
                     <GitHubIcon class="size-6" />
                     Code
                   </LinkButton>
                 )}
                 {demo && (
-                  <LinkButton href={demo}>
+                  <LinkButton href={demo} target="_blank">
                     <PlayIcon class="size-6" />
-                    Demo
+                    Live Demo
                   </LinkButton>
                 )}
               </footer>
