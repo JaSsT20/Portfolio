@@ -1,11 +1,12 @@
 ---
 interface Props {
+  company: string;
   title: string;
   description: string;
   link?: string;
   date: string;
 }
-const { title, description, date } = Astro.props;
+const { company, title, description, date } = Astro.props;
 ---
 
 <div
@@ -13,11 +14,14 @@ const { title, description, date } = Astro.props;
 >
 </div>
 <time
-  class="ms-3 mb-2 text-sm font-normal leading-none text-gray-700/70 dark:text-gray-500"
+  class="ms-3 mb-1 text-sm font-normal leading-none text-gray-700/70 dark:text-gray-500"
 >
   {date}
 </time>
-<h3 class="ms-3 text-lg font-bold text-yellow-500 dark:text-yellow-500 mt-2">
+<h4 class="ms-3 text-base font-semibold text-gray-800 dark:text-gray-200 mb-1">
+  {company}
+</h4>
+<h3 class="ms-3 text-lg font-bold text-indigo-600 dark:text-indigo-400 mt-1">
   {title}
 </h3>
 <p class="ms-3 mb-4 text-base font-normal text-gray-600 dark:text-gray-300">
